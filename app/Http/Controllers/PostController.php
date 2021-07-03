@@ -26,9 +26,9 @@ class PostController extends Controller
 //            'pic_url' => $drug_pic_str,//ok
 //            'drug_name'=>$drug_name
 //        ]);
-        return response()->json([
+        return [
             'pic_url' => $drug_pic_str,
             'drug_name'=>$drug_name
-        ]);
+        ];
     }
 }
