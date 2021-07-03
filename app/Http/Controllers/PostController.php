@@ -18,17 +18,17 @@ class PostController extends Controller
         $drug_name = Arr::get($data, 'drug_table.0.drug_name');//drug_table.0.drug_name
         $drug_pic_arr = Arr::get($data, 'drug_table.0.fig');//drug_table.0.drug_name
         $drug_pic_str = Arr::get($drug_pic_arr, '0');
-//        dd($drug_pic_str);//drug_table.0.fig
+//        dd($data);//drug_table.0.fig
 //        $drug_pic_str;
 //        print_r($request);
 
-        return view('home', [
-            'pic_url' => $drug_pic_str,//ok
-            'drug_name'=>$drug_name
-        ]);
-//        return response()->json([
-//            'pic_url' => $drug_pic_str,
+//        return view('home', [
+//            'pic_url' => $drug_pic_str,//ok
 //            'drug_name'=>$drug_name
 //        ]);
+        return response()->json([
+            'pic_url' => $drug_pic_str,
+            'drug_name'=>$drug_name
+        ]);
     }
 }
